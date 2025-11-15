@@ -18,6 +18,6 @@ public class StringDemo2 {
         String right = s1.substring(n / 2);
         System.out.println(right + left);
 
-        System.out.println(s1.replaceAll("pyba", "").repeat(2));
+        System.out.println(s1.replace("pyba", "").repeat(2));
     }
 }
