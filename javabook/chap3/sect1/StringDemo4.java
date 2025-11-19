@@ -8,11 +8,10 @@ package javabook.chap3.sect1;
 public class StringDemo4 {
 
    public static void main(String[] args) {
-      System.out.println("SLUBBERDEGULLION");
-      System.out.println("SLUB\tBERD\nEGUL\tLION");
+      System.out.println("A\tB\tC");
+      System.out.println("1\n2\n3");
 
       System.out.println("She said, \"Attack!\"");
-
       System.out.println("Slash: /");
       System.out.println("Backslash: \\");
 
