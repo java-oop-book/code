@@ -5,7 +5,7 @@ package javabook.chap3.sect1;
  *
  * @author Drue Coles
  */
-public class StringDemo {
+public class ConcatDemo {
 
     public static void main(String[] args) {
         String s1 = "butter";
