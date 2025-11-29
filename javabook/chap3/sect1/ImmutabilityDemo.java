@@ -5,7 +5,7 @@ package javabook.chap3.sect1;
  *
  * @author Drue Coles
  */
-public class StringDemo3 {
+public class ImmutabilityDemo {
 
    public static void main(String[] args) {
       String animal = "quokka";
