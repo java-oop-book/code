@@ -5,7 +5,7 @@ package javabook.chap3.sect1;
  *
  * @author Drue Coles
  */
-public class StringDemo4 {
+public class EscapeDemo {
 
    public static void main(String[] args) {
       System.out.println("A\tB\tC");
