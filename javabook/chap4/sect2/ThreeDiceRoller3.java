@@ -1,4 +1,4 @@
-package javabook.chap4.sect1;
+package javabook.chap4.sect2;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
