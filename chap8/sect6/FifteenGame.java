@@ -1,4 +1,4 @@
-package javabook.chap8.sect6;
+package chap8.sect6;
 
 import java.util.concurrent.ThreadLocalRandom;
 
