@@ -1,4 +1,4 @@
-package javabook.chap8.sect5;
+package chap8.sect5;
 
 /**
  * Calculates the probability that Thor beats Zeus. Thor has nine 4-sided dice and Zeus has six
