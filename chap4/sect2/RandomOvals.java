@@ -1,4 +1,4 @@
-package javabook.chap4.sect2;
+package chap4.sect2;
 
 import java.util.concurrent.ThreadLocalRandom;
 import javafx.application.Application;
