@@ -1,4 +1,4 @@
-package javabook.chap3.sect6;
+package chap3.sect6;
 
 import java.time.Duration;
 import java.time.LocalTime;
