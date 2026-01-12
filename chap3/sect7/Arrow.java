@@ -1,4 +1,4 @@
-package javabook.chap3.sect7;
+package chap3.sect7;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
