@@ -1,4 +1,4 @@
-package javabook.chap3.sect2;
+package chap3.sect2;
 
 import java.math.BigInteger;
 import java.util.BitSet;
