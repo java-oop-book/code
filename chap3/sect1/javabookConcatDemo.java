@@ -1,4 +1,4 @@
-package javabook.chap3.sect1;
+package chap3.sect1;
 
 /**
  * Demonstrates string concatenation.
