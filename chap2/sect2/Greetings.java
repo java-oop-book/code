@@ -1,4 +1,4 @@
-package javabook.chap2.sect2;
+package chap2.sect2;
 
 public class Greetings {
 
