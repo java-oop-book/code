@@ -52,24 +52,6 @@ public class RationalNumber {
    }
 
    /**
-    * Returns the greatest common divisor of two integers.
-    */
-   private static int gcd(int x, int y) {
-      x = Math.abs(x);
-      y = Math.abs(y);
-
-      // Euclid's algorithm
-      int a = Math.max(x, y);
-      int b = Math.min(x, y);
-      while (b > 0) {
-         int temp = b;
-         b = a % b;
-         a = temp;
-      }
-      return a;
-   }
-
-   /**
     * Returns the sum of this rational number and another.
     */
    public RationalNumber add(RationalNumber o) {
@@ -150,5 +132,23 @@ public class RationalNumber {
    @Override
    public int hashCode() {
       return 89 * numerator + denominator;
+   }
+
+   /**
+    * Returns the greatest common divisor of two integers.
+    */
+   private static int gcd(int x, int y) {
+      x = Math.abs(x);
+      y = Math.abs(y);
+
+      // Euclid's algorithm
+      int a = Math.max(x, y);
+      int b = Math.min(x, y);
+      while (b > 0) {
+         int temp = b;
+         b = a % b;
+         a = temp;
+      }
+      return a;
    }
 }
