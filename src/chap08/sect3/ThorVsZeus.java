@@ -16,7 +16,7 @@ public class ThorVsZeus {
       final int games = 10_000_000;
       int thorWins = 0;
       for (int i = 0; i < games; i++) {
-         if (play(thorCup, zeusCup)) {
+         if (firstPlayerWins(thorCup, zeusCup)) {
             thorWins++;
          }
       }
@@ -26,13 +26,13 @@ public class ThorVsZeus {
    }
    
    /**
-    * Rolls both cups and returns true if Thor's total is higher than Zeus's.
+    * Rolls two cups and returns true if the first total is higher than the second.
     */
-   private static boolean play(CupOfDice thorCup, CupOfDice zeusCup) {
-      thorCup.roll();
-      zeusCup.roll();
-      int s1 = sum(thorCup.getDice());
-      int s2 = sum(zeusCup.getDice());
+   private static boolean firstPlayerWins(CupOfDice c1, CupOfDice c2) {
+      c1.roll();
+      c2.roll();
+      int s1 = sum(c1.getDice());
+      int s2 = sum(c2.getDice());
       return s1 > s2;
    }
 

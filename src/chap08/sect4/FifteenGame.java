@@ -48,20 +48,6 @@ public class FifteenGame {
    }
 
    /**
-    * Shuffles the grid by making n random moves.
-    */
-   private void shuffle(int n) {
-      ThreadLocalRandom rand = ThreadLocalRandom.current();
-      while (n > 0) {
-         int tileToMove = rand.nextInt(1, ROWS * COLS);
-         boolean tileMoved = slide(tileToMove);
-         if (tileMoved) {
-            n--;
-         }
-      }
-   }
-
-   /**
     * Returns the tile number at a specified location.
     */
    public int tileAt(int row, int col) {
@@ -141,5 +127,19 @@ public class FifteenGame {
          gameState += '\n';
       }
       return gameState;
+   }
+
+   /**
+    * Shuffles the grid by making n random moves.
+    */
+   private void shuffle(int n) {
+      ThreadLocalRandom rand = ThreadLocalRandom.current();
+      while (n > 0) {
+         int tileToMove = rand.nextInt(1, ROWS * COLS);
+         boolean tileMoved = slide(tileToMove);
+         if (tileMoved) {
+            n--;
+         }
+      }
    }
 }
