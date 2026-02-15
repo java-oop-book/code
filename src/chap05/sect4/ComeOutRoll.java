@@ -16,25 +16,25 @@ public class ComeOutRoll {
       ThreadLocalRandom rand = ThreadLocalRandom.current();
       int die1 = rand.nextInt(1, 7);
       int die2 = rand.nextInt(1, 7);
-      int sum = die1 + die2;
+      final int comeOutRoll = die1 + die2;
 
-      System.out.printf("You rolled %d + %d = %d.%n", die1, die2, sum);
+      System.out.printf("You rolled %d + %d = %d. %n", die1, die2, comeOutRoll);
 
-      final String winMessage = "You win.";
-      final String loseMessage = "You lose.";
+      final String winMessage = "Natural. You win.";
+      final String loseMessage = "Craps. You lose.";
       final String continueMessage = "The game continues.";
 
       // switch statement
-      switch (sum) {
+      switch (comeOutRoll) {
          case 7, 11 -> System.out.println(winMessage);
          case 2, 3, 12 -> System.out.println(loseMessage);
          default -> System.out.println(continueMessage);
       }
 
       // switch expression
-      String result = switch (sum) {
-         case 7, 11 -> "You win.";
-         case 2, 3, 12 -> "You lose.";
+      String result = switch (comeOutRoll) {
+         case 7, 11 -> "Natural. You win.";
+         case 2, 3, 12 -> "Craps. You lose.";
          default -> "The game continues.";
       };
       System.out.println(result);

@@ -15,28 +15,28 @@ public class ComeOutRoll {
       ThreadLocalRandom rand = ThreadLocalRandom.current();
       int die1 = rand.nextInt(1, 7);
       int die2 = rand.nextInt(1, 7);
-      int sum = die1 + die2;
+      final int comeOutRoll = die1 + die2;
 
-      System.out.printf("You rolled %d + %d = %d.%n", die1, die2, sum);
+      System.out.printf("You rolled %d + %d = %d. %n", die1, die2, comeOutRoll);
 
-      final String winMessage = "You win.";
-      final String loseMessage = "You lose.";
+      final String winMessage = "Natural. You win.";
+      final String loseMessage = "Craps. You lose.";
       String result = "The game continues."; // provisional
 
       // each condition is tested independently
-      if (sum == 7) {
+      if (comeOutRoll == 7) {
          result = winMessage;
       }
-      if (sum == 11) {
+      if (comeOutRoll == 11) {
          result = winMessage;
       }
-      if (sum == 2) {
+      if (comeOutRoll == 2) {
          result = loseMessage;
       }
-      if (sum == 3) {
+      if (comeOutRoll == 3) {
          result = loseMessage;
       }
-      if (sum == 12) {
+      if (comeOutRoll == 12) {
          result = loseMessage;
       }
       System.out.println(result);

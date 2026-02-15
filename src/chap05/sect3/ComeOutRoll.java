@@ -16,23 +16,23 @@ public class ComeOutRoll {
       ThreadLocalRandom rand = ThreadLocalRandom.current();
       int die1 = rand.nextInt(1, 7);
       int die2 = rand.nextInt(1, 7);
-      int sum = die1 + die2;
+      final int comeOutRoll = die1 + die2;
 
-      System.out.printf("You rolled %d + %d = %d.%n", die1, die2, sum);
+      System.out.printf("You rolled %d + %d = %d. %n", die1, die2, comeOutRoll);
 
-      final String winMessage = "You win.";
-      final String loseMessage = "You lose.";
+      final String winMessage = "Natural. You win.";
+      final String loseMessage = "Craps. You lose.";
       final String continueMessage = "The game continues";
 
-      if (sum == 7) {
+      if (comeOutRoll == 7) {
          System.out.println(winMessage);
-      } else if (sum == 11) {
+      } else if (comeOutRoll == 11) {
          System.out.println(winMessage);
-      } else if (sum == 2) {
+      } else if (comeOutRoll == 2) {
          System.out.println(loseMessage);
-      } else if (sum == 3) {
+      } else if (comeOutRoll == 3) {
          System.out.println(loseMessage);
-      } else if (sum == 12) {
+      } else if (comeOutRoll == 12) {
          System.out.println(loseMessage);
       } else {
          System.out.println(continueMessage);
