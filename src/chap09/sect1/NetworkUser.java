@@ -37,6 +37,6 @@ public class NetworkUser {
     */
    @Override
    public String toString() {
-      return login + " (" + password + ")";
+      return String.format("%s (%s)", login, password);
    }
 }
