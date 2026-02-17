@@ -101,7 +101,7 @@ public class RationalNumber {
          return "0";
       }
       if (denominator == 1) {
-         return "" + numerator;
+         return String.valueOf(numerator);
       }
 
       return numerator + "/" + denominator;

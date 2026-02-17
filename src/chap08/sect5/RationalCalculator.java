@@ -28,8 +28,8 @@ public class RationalCalculator {
 
       System.out.printf("%s + %s = %s %n", a, b, w);
       System.out.printf("%s - %s = %s %n", a, b, x);
-      System.out.printf("%s * %s = %s %n", a, b, y);
-      System.out.printf("%s / %s = %s %n", a, b, z);
+      System.out.printf("%s × %s = %s %n", a, b, y);
+      System.out.printf("%s ÷ %s = %s %n", a, b, z);
 
       // compute a^2 + b^2
       RationalNumber sumSquares = a.multiply(a).add(b.multiply(b));
