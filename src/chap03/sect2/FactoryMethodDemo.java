@@ -23,7 +23,7 @@ public class FactoryMethodDemo {
         LocalDate apollo11 = LocalDate.of(1969, 7, 20);
         LocalDate today = LocalDate.now();
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("EEEE, MMMM d, uuuu");
-        System.out.printf("First moon landing: %s%n", apollo11.format(fmt));
-        System.out.printf("Today: %s%n", today.format(fmt));
+        System.out.printf("First moon landing: %s %n", apollo11.format(fmt));
+        System.out.printf("Today: %s %n", today.format(fmt));
     }
 }
