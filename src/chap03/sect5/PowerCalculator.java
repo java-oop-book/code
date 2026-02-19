@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author Drue Coles
  */
-public class PowerCalculator2 {
+public class PowerCalculator {
 
    public static void main(String[] args) {
       // prompt the user and read input
