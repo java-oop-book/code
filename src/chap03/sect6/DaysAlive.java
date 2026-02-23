@@ -25,14 +25,14 @@ public class DaysAlive {
       // output today's date
       LocalDate today = LocalDate.now();
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
-      System.out.printf("Today is %s.%n", today.format(formatter));
+      System.out.printf("Today is %s. %n", today.format(formatter));
 
       // output current age
       Period period = Period.between(birthday, today);
-      System.out.printf("You are %d years old.%n", period.getYears());
+      System.out.printf("You are %d years old. %n", period.getYears());
 
       // calculate total number of days since birth
       long daysAlive = ChronoUnit.DAYS.between(birthday, today);
-      System.out.printf("You have been alive for %,d days.%n", daysAlive);
+      System.out.printf("You have been alive for %,d days. %n", daysAlive);
    }
 }

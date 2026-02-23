@@ -24,8 +24,8 @@ public class FavoriteTime {
 
         // display current and future times in hh:mm:ss (24-hour format)
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        System.out.printf("%13s %s%n", "Current time:", now.format(formatter));
-        System.out.printf("%13s %s%n", "Future time:", futureTime.format(formatter));
+        System.out.printf("%13s %s %n", "Current time:", now.format(formatter));
+        System.out.printf("%13s %s %n", "Future time:", futureTime.format(formatter));
 
         // compute number of seconds until future time
         int secondsInDay = 24 * 60 * 60;
@@ -40,6 +40,6 @@ public class FavoriteTime {
         long hours = totalSeconds / 3600;
         long minutes = (totalSeconds % 3600) / 60;
         long seconds = totalSeconds % 60;
-        System.out.printf("%13s %02d:%02d:%02d%n", "Waiting time:", hours, minutes, seconds);
+        System.out.printf("%13s %02d:%02d:%02d %n", "Waiting time:", hours, minutes, seconds);
     }
 }
