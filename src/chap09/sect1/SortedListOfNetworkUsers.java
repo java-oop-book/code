@@ -12,7 +12,7 @@ public class SortedListOfNetworkUsers {
    private final ArrayList<NetworkUser> users = new ArrayList<>();
 
    /**
-    * Returns the size of the list.
+    * Returns the size of this list.
     */
    public int size() {
       return users.size();
