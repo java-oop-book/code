@@ -29,7 +29,7 @@ public class SortedListTester {
         }
         System.out.println();
         
-        // insert 3 network users into empty list
+        // insert 4 network users into empty list
         sortedList = new SortedList();
         NetworkUser n1 = new NetworkUser("washington", "usa123");
         NetworkUser n2 = new NetworkUser("adams", "july4hello");
@@ -42,8 +42,7 @@ public class SortedListTester {
 
         // verify order
         for (int i = 0; i < sortedList.size(); i++) {
-            NetworkUser n = (NetworkUser) sortedList.get(i);
-            System.out.println(n.getLogin());
+            System.out.println(sortedList.get(i));
         }
         System.out.println();
     }

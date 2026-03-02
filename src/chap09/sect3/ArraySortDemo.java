@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Sorts several arrays of different types and outputs the results
+ * Sorts several arrays of different types and outputs the results.
  *
  * @author Drue Coles
  */
