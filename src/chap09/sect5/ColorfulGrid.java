@@ -12,28 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static javafx.scene.paint.Color.AQUAMARINE;
-import static javafx.scene.paint.Color.BLACK;
-import static javafx.scene.paint.Color.DARKSLATEGRAY;
-import static javafx.scene.paint.Color.DEEPPINK;
-import static javafx.scene.paint.Color.DODGERBLUE;
-import static javafx.scene.paint.Color.GOLD;
-import static javafx.scene.paint.Color.GREEN;
-import static javafx.scene.paint.Color.GREENYELLOW;
-import static javafx.scene.paint.Color.INDIGO;
-import static javafx.scene.paint.Color.LIME;
-import static javafx.scene.paint.Color.MAGENTA;
-import static javafx.scene.paint.Color.NAVY;
-import static javafx.scene.paint.Color.ORANGE;
-import static javafx.scene.paint.Color.PLUM;
-import static javafx.scene.paint.Color.POWDERBLUE;
-import static javafx.scene.paint.Color.PURPLE;
-import static javafx.scene.paint.Color.STEELBLUE;
-import static javafx.scene.paint.Color.TEAL;
-import static javafx.scene.paint.Color.THISTLE;
-import static javafx.scene.paint.Color.TOMATO;
-import static javafx.scene.paint.Color.TURQUOISE;
-import static javafx.scene.paint.Color.YELLOW;
+import static javafx.scene.paint.Color.*;
 
 /**
  * Each cell of a square grid is filled with a unique color selected at random from a small list of

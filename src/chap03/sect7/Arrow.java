@@ -36,7 +36,7 @@ public class Arrow extends Application {
         // arrow dimensions
         final double tipWidth = sceneSize / 2.0;
         final double shaftWidth = sceneSize / 5.0;
-        final double shaftHeight = sceneSize / 2.0 - 4 * padding;
+        final double shaftHeight = radius - 3 * padding;
 
         // arrow tip: an isosceles triangle centered horizontally with apex at the top
         final Polygon arrowTip = new Polygon(
