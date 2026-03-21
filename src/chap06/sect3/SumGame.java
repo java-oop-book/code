@@ -14,7 +14,7 @@ public class SumGame {
       final int numGames = 100_000_000;
       int wins = 0;
 
-      System.out.println("Simulating the Sum Game...");
+      System.out.printf("Simulating %,d trials of the Sum Game... %n", numGames);
       for (int i = 0; i < numGames; i++) {
          if (sumGame()) {
             wins++;
@@ -22,7 +22,6 @@ public class SumGame {
       }
 
       double probability = (double) wins / numGames;
-      System.out.printf("Games played: %,d %n", numGames);
       System.out.printf("Estimated probability of winning: %.4f%% %n", probability);
    }
 

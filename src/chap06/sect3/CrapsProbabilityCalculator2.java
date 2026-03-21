@@ -16,7 +16,7 @@ public class CrapsProbabilityCalculator2 {
         int rolls = 0;  // total across all games
         int maxNumRolls = 0; // maximum in a single game
 
-        System.out.println("Simulating the game of Craps...");
+        System.out.printf("Simulating %,d trials of the game of Craps... %n", numGames);
         for (int i = 0; i < numGames; i++) {
             int result = playCraps();
             if (result > 0) {
@@ -29,7 +29,6 @@ public class CrapsProbabilityCalculator2 {
 
         double probability = (double) wins / numGames;
         double expectedLength = (double) rolls / numGames;
-        System.out.printf("Games played: %,d %n", numGames);
         System.out.printf("Estimated probability of winning: %.4f %n", probability);
         System.out.printf("Expected number of rolls per game: %.3f %n", expectedLength);
         System.out.printf("Greatest number of rolls: %d %n", maxNumRolls);

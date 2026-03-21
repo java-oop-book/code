@@ -12,11 +12,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PiApproximator {
 
     public static void main(String[] args) {
-        final int numberOfPoints = 100_000_000;
+        final int numPoints = 100_000_000;
         int pointsInCircle = 0;
 
         ThreadLocalRandom rand = ThreadLocalRandom.current();
-        for (int i = 0; i < numberOfPoints; i++) {
+        System.out.printf("Generating %,d random points from the unit square... %n", numPoints);
+        for (int i = 0; i < numPoints; i++) {
             // random point (x, y) in unit square
             double x = rand.nextDouble();
             double y = rand.nextDouble();
@@ -26,13 +27,13 @@ public class PiApproximator {
             }
         }
 
-        double piApprox = 4.0 * pointsInCircle / numberOfPoints;
+        double piApprox = 4.0 * pointsInCircle / numPoints;
 
         // A double-precision floating-point number has about 16 decimal digits of precision, but
         // the last digit may be unreliable due to binary rounding, so 15 is specified.
-        String label1 = String.format("Monte Carlo approximation (%,d points)", numberOfPoints);
+        String label1 = "The value of π estimated by Monte Carlo simulation";
         String label2 = "Double-precision floating-point value nearest to π";
-        System.out.printf("%50s: %.15f%n", label1, piApprox);
-        System.out.printf("%50s: %.15f%n", label2, Math.PI);
+        System.out.printf("%s: %.15f%n", label1, piApprox);
+        System.out.printf("%s: %.15f%n", label2, Math.PI);
     }
 }

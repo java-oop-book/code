@@ -15,10 +15,11 @@ public class RandomWalk {
       Scanner in = new Scanner(System.in);
       System.out.print("Enter radius of circle: ");
       int radius = in.nextInt();
-      final int numWalks = 1000;
+      final int numWalks = 100_000;
       int numSteps = 0; // total over all walks
 
-      // monte carlo simulation
+      // Monte Carlo simulation
+      System.out.printf("Simulating %,d random walks... %n", numWalks);
       for (int i = 0; i < numWalks; i++) {
          numSteps += randomWalk(radius);
       }

@@ -13,7 +13,7 @@ public class CrapsProbabilityCalculator {
         final int numGames = 100_000_000;
         int wins = 0;
 
-        System.out.println("Simulating the game of Craps...");
+        System.out.printf("Simulating %,d trials of the game of Craps... %n", numGames);
         for (int i = 0; i < numGames; i++) {
             if (playerWins()) {
                 wins++;
@@ -21,7 +21,6 @@ public class CrapsProbabilityCalculator {
         }
 
         double probability = (double) wins / numGames;
-        System.out.printf("Games played: %,d %n", numGames);
         System.out.printf("Estimated probability of winning: %.4f %n", probability);
     }
 
