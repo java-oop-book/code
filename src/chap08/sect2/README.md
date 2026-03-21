@@ -1,3 +1,3 @@
-# Chapter 8.2
+# Section 8.2
 
 This section contains no program listings.

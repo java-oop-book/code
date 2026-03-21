@@ -1,3 +1,3 @@
-# Chapter 10.1
+# Section 10.1
 
 This section contains no program listings.
