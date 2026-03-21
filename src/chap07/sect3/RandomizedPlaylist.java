@@ -1,4 +1,4 @@
-package chap07.sect2;
+package chap07.sect3;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
