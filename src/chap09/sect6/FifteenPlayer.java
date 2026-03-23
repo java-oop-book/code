@@ -32,7 +32,7 @@ public class FifteenPlayer extends Application {
 
         game = new FifteenGame(chooseDifficulty());
 
-        // arrange button clicks in grid pane
+        // arrange buttons in grid pane
         GridPane gridPane = new GridPane();
         root.getChildren().add(gridPane);
         gridPane.setStyle("-fx-background-color: BLACK");
@@ -40,7 +40,7 @@ public class FifteenPlayer extends Application {
         gridPane.setHgap(hvGap);
         gridPane.setVgap(hvGap);
 
-        // handles button by sliding selected tile
+        // handles button click by sliding selected tile
         class ButtonHandler implements EventHandler<ActionEvent> {
             @Override
             public void handle(ActionEvent event) {
