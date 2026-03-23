@@ -14,8 +14,8 @@ public class ThreeDiceRoller3 {
       Scanner in = new Scanner(System.in);
       System.out.print("Enter number of sides: ");
       int sides = in.nextInt();
-      System.out.printf("Player 1 rolls %s.%n", rollDice(sides));
-      System.out.printf("Player 2 rolls %s.%n", rollDice(sides));
+      System.out.printf("Player 1 rolls %s %n", rollDice(sides));
+      System.out.printf("Player 2 rolls %s %n", rollDice(sides));
    }
 
    /**

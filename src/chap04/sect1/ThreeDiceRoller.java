@@ -24,7 +24,7 @@ public class  ThreeDiceRoller {
       int hi = Math.max(die1, Math.max(die2, die3));
       int mid = (die1 + die2 + die3) - lo - hi;
 
-      System.out.printf("Player 1 rolls %d-%d-%d%n", lo, mid, hi);
+      System.out.printf("Player 1 rolls %d-%d-%d %n", lo, mid, hi);
 
       // second player
       die1 = rand.nextInt(1, sides + 1);

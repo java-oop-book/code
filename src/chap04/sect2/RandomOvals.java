@@ -50,7 +50,7 @@ public class RandomOvals extends Application {
    }
    
    /**
-    * Creates and returns a color with a random RGB components.
+    * Creates and returns a color with random RGB components.
     */
    private static Color randomColor() {
       ThreadLocalRandom rand = ThreadLocalRandom.current();

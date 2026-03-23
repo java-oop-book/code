@@ -10,8 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ThreeDiceRoller2 {
 
    public static void main(String[] args) {
-      System.out.printf("Player 1 rolls %s.%n", rollDice());
-      System.out.printf("Player 2 rolls %s.%n", rollDice());
+      System.out.printf("Player 1 rolls %s %n", rollDice());
+      System.out.printf("Player 2 rolls %s %n", rollDice());
    }
 
    /**
