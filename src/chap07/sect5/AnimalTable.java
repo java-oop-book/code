@@ -1,45 +1,39 @@
 package chap07.sect5;
 
+import java.util.Arrays;
+
 /**
- * Demonstrates the use of initializer lists and for-each loops with 
- * two-dimensional arrays.
+ * Displays a table of animal names before and after sorting each row.
  *
  * @author Drue Coles
  */
 public class AnimalTable {
 
    public static void main(String[] args) {
-
-      // initialize 3x5 array of animal names 
       String[][] animals = {
-         {"buffalo", "cheetah", "gorilla", "lemming", "lobster"},
-         {"meerkat", "markhor", "octopus", "penguin", "quetzal"},
-         {"raccoon", "tuatara", "vulture", "wallaby", "whippet"}
+         {"gorilla", "buffalo", "lobster", "cheetah"},
+         {"penguin", "quetzal", "meerkat", "octopus"},
+         {"vulture", "whippet", "raccoon", "wallaby"}
       };
 
-      System.out.println(format(animals));
+      System.out.println(toString(animals));
 
-      // Remove vowels from animal names. 
       for (String[] row : animals) {
-         for (int j = 0; j < row.length; j++) {
-            row[j] = String.format("%7s", 
-                    row[j].replaceAll("[aeiou]", ""));
-         }
+         Arrays.sort(row);
       }
-      System.out.println(format(animals));
+      System.out.println(toString(animals));
    }
 
    /**
-    * Returns a string obtained by concatenating the elements of arr
-    * with newline characters to preserve tabular structure.
+    * Returns a string representation of a 2D array with rows separated by newlines.
     */
-   private static String format(String[][] arr) {
+   private static String toString(String[][] arr) {
       String result = "";
       for (String[] row : arr) {
          for (String item : row) {
             result += item + " ";
          }
-         result += "\n";
+         result += "\n"; // end of row
       }
       return result;
    }
