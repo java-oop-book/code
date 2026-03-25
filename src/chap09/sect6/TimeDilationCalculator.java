@@ -65,7 +65,7 @@ public class TimeDilationCalculator extends Application {
 
         // handles button clicks by reading fields and updating result label
         class ButtonHandler implements EventHandler<ActionEvent> {
-            // assumes non-empty input is numeric and checks for valid ranges
+            // assumes non-empty input can be parsed as doubles
             @Override
             public void handle(ActionEvent event) {
                 String vText = vTextField.getText();
