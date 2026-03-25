@@ -22,17 +22,15 @@ import javafx.stage.Stage;
  */
 public class FifteenPlayer extends Application {
 
-    private static final int DIFFICULTY = 15; // easy for testing purposes
+    private static final int DIFFICULTY = 20; // easy
+    private final FifteenGame game = new FifteenGame(DIFFICULTY);
 
-    private FifteenGame game = new FifteenGame(DIFFICULTY);
     private final Button[][] buttons = new Button[FifteenGame.ROWS][FifteenGame.COLS];
 
     @Override
     public void start(Stage stage) {
         Pane root = new Pane();
         Scene scene = new Scene(root);
-
-        game = new FifteenGame(15); // easy game for testing purposes
 
         // arrange buttons in grid pane
         GridPane gridPane = new GridPane();
