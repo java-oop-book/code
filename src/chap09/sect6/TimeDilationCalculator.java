@@ -97,15 +97,15 @@ public class TimeDilationCalculator extends Application {
     }
 
     /**
-     * Calculates the time elapsed on Earth for an object moving at constant velocity v (fraction of
-     * light speed) given the time u measured on the spaceship.
+     * Calculates the time elapsed on Earth relative to that of a spaceship moving at constant
+     * velocity.
      *
      * @param v the velocity of the spaceship as a fraction of light speed (0 ≤ v < 1)
-     * @param u the time measured on the spaceship (years)
+     * @param u the time measured on the ship (years)
      * @return a formatted string giving the time elapsed on Earth
      */
     private static String getElapsedTime(double v, double u) {
-        double t = Math.sqrt(u * u / (1 - v * v)); // Earth time
+        double t = Math.sqrt(u * u / (1 - v * v)); // earth time
         return String.format("%.2f years", t);
     }
 
