@@ -22,7 +22,9 @@ import javafx.stage.Stage;
  */
 public class FifteenPlayer extends Application {
 
-    private FifteenGame game;
+    private static final int DIFFICULTY = 15; // easy for testing purposes
+
+    private FifteenGame game = new FifteenGame(DIFFICULTY);
     private final Button[][] buttons = new Button[FifteenGame.ROWS][FifteenGame.COLS];
 
     @Override
@@ -30,7 +32,7 @@ public class FifteenPlayer extends Application {
         Pane root = new Pane();
         Scene scene = new Scene(root);
 
-        game = new FifteenGame(chooseDifficulty());
+        game = new FifteenGame(15); // easy game for testing purposes
 
         // arrange buttons in grid pane
         GridPane gridPane = new GridPane();
@@ -51,7 +53,7 @@ public class FifteenPlayer extends Application {
 
                 if (game.over()) {
                     Alert alert = new Alert(AlertType.INFORMATION);
-                    alert.setTitle("GAME OVER");
+                    alert.setTitle("Game of Fifteen");
                     alert.setHeaderText("You have solved the puzzle!");
                     alert.setContentText("Goodbye.");
                     alert.showAndWait();
@@ -79,7 +81,7 @@ public class FifteenPlayer extends Application {
         }
         setButtonText();
 
-        stage.setTitle("Fifteen Puzzle");
+        stage.setTitle("Game of Fifteen");
         stage.setScene(scene);
         stage.show();
     }
@@ -99,25 +101,6 @@ public class FifteenPlayer extends Application {
                 }
             }
         }
-    }
-
-    /**
-     * Prompts the user to select a difficulty level and returns the corresponding value.
-     */
-    private static int chooseDifficulty() {
-        ChoiceDialog<String> dialog = new ChoiceDialog<>("Easy", "Easy", "Medium", "Hard");
-
-        dialog.setTitle("Difficulty");
-        dialog.setHeaderText("Select difficulty level");
-        dialog.setContentText("Difficulty:");
-
-        return dialog.showAndWait()
-                .map(choice -> switch (choice) {
-                    case "Medium" -> 40;
-                    case "Hard" -> 60;
-                    default -> 20;
-                })
-                .orElse(20); // default if dialog closed
     }
 
     public static void main(String[] args) {

@@ -31,7 +31,7 @@ public class Arrow extends Application {
         // circle of light
         final double padding = 5.0;
         final double radius = sceneSize / 2.0 - padding;
-        final Circle circle = new Circle(centerX, centerY, radius, Color.YELLOW);
+        final Circle circle = new Circle(centerX, centerY, radius, Color.LIGHTSTEELBLUE);
 
         // arrow dimensions
         final double tipWidth = sceneSize / 2.0;
