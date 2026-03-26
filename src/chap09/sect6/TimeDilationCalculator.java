@@ -12,12 +12,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
- * Displays time t elapsed on Earth after a spaceship has traveled at constant velocity v for a time
- * u as measured on the ship. According to Einstein's Special Theory of Relativity, these values
- * are related by the following formula: t^2 / u^2 = 1 - v^2, where v is expressed as a fraction of
- * light speed.
+ *  Displays the time elapsed on Earth given the time measured on a spaceship moving at constant
+ *  velocity relative to Earth.
  *
- * @author Albert Einstein
+ * @author Drue Coles
  */
 public class TimeDilationCalculator extends Application {
 
@@ -65,7 +63,6 @@ public class TimeDilationCalculator extends Application {
 
         // handles button clicks by reading fields and updating result label
         class ButtonHandler implements EventHandler<ActionEvent> {
-            // assumes non-empty input can be parsed as double
             @Override
             public void handle(ActionEvent event) {
                 String vText = vTextField.getText();
@@ -77,9 +74,11 @@ public class TimeDilationCalculator extends Application {
                     return;
                 }
 
-                // check for invalid numbers
+                // exception thrown if input cannot be parsed as double
                 double v = Double.parseDouble(vText);
                 double t = Double.parseDouble(tText);
+
+                // check for invalid input in the text fields
                 if (t < 0 || v < 0 || v >= 1) {
                     setLabel(resultLabel, error, "INVALID INPUT");
                     return;
@@ -97,20 +96,20 @@ public class TimeDilationCalculator extends Application {
     }
 
     /**
-     * Calculates the time elapsed on Earth relative to that of a spaceship moving at constant
-     * velocity.
+     * Calculates the time elapsed on Earth from the time measured on a spaceship moving at constant
+     * velocity relative to Earth, using a formula from Einstein's Special Theory of Relativity.
      *
      * @param v the velocity of the spaceship as a fraction of light speed (0 ≤ v < 1)
-     * @param u the time measured on the ship (years)
+     * @param u the time measured on the ship in years
      * @return a formatted string giving the time elapsed on Earth
      */
     private static String getElapsedTime(double v, double u) {
-        double t = Math.sqrt(u * u / (1 - v * v)); // earth time
-        return String.format("%.2f years", t);
+        double elapsedTimeOnEarth = Math.sqrt(u * u / (1 - v * v));
+        return String.format("%.2f years", elapsedTimeOnEarth);
     }
 
     /**
-     * Sets the text on a given label and applies a given style.
+     * Sets a label's style and text.
      */
     private static void setLabel(Label label, String style, String text) {
         label.setStyle(style);
