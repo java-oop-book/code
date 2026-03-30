@@ -29,6 +29,6 @@ public class FutureDate {
 
       long daysUntil = ChronoUnit.DAYS.between(today, futureDate);
       DateTimeFormatter f = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
-      System.out.printf("%,d days until %s.%n", daysUntil, f.format(futureDate));
+      System.out.printf("%,d days until %s. %n", daysUntil, f.format(futureDate));
    }
 }

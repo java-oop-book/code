@@ -35,7 +35,7 @@ import javafx.stage.Stage;
 public class BirdSongPlayer extends Application {
 
     private static final String[] birdNames = {
-        "bluebird", "chickadee", "goldfinch", "nuthatch", "oriole", "robin", "sparrow", "wren"
+            "bluebird", "chickadee", "goldfinch", "nuthatch", "oriole", "robin", "sparrow", "wren"
     };
     private static final Image[] images = new Image[birdNames.length];
     private static final AudioClip[] clips = new AudioClip[birdNames.length];
@@ -53,43 +53,34 @@ public class BirdSongPlayer extends Application {
         root.setPadding(new Insets(10));
         Scene scene = new Scene(root);
 
-        // control nodes
+        // HBox holds ImageView and VBox with radio buttons, added to center of BorderPane
         ImageView currentImage = new ImageView(images[0]);
         currentImage.setFitWidth(300);
         currentImage.setPreserveRatio(true);
-        RadioButton[] radioButtons = new RadioButton[birdNames.length];
-        ToggleGroup toggleGroup = new ToggleGroup();
-        Button playButton = new Button("Play Song");
-
-        // wrap in a StackPane to apply a border
-        StackPane imagePane = new StackPane(currentImage);
+        StackPane imagePane = new StackPane(currentImage); 
         imagePane.setStyle("-fx-border-color: black; -fx-border-width: 2; -fx-padding: 2;");
-
-        // two children of the root node
-        FlowPane playButtonFlowPane = new FlowPane();
-        HBox hBox = new HBox(10);
-
-        // initialize flow pane containing the play button
-        playButtonFlowPane.getChildren().add(playButton);
-        playButtonFlowPane.setAlignment(Pos.CENTER);
-        playButtonFlowPane.setPadding(new Insets(10, 0, 0, 10));
-        root.setBottom(playButtonFlowPane);
-
-        // initialize HBox to hold image and VBox with radio buttons
         VBox radioButtonVBox = new VBox(20);
         radioButtonVBox.setAlignment(Pos.CENTER_LEFT);
+        HBox hBox = new HBox(10);
         hBox.getChildren().addAll(imagePane, radioButtonVBox);
         root.setCenter(hBox);
 
+        // FlowPane holds play button, added to bottom of BorderPane
+        Button playButton = new Button("Play Song");
+        FlowPane playButtonFlowPane = new FlowPane();
+        playButtonFlowPane.getChildren().add(playButton);
+        playButtonFlowPane.setAlignment(Pos.CENTER);
+        playButtonFlowPane.setPadding(new Insets(10, 0, 0, 0));
+        root.setBottom(playButtonFlowPane);
+
         // handles radio button clicks by setting image of selected bird
         class BirdSelectionHandler implements EventHandler<ActionEvent> {
-            private final int indexOfBird; // radio button index
+            private final int indexOfBird;
 
             private BirdSelectionHandler(int indexOfBird) {
                 this.indexOfBird = indexOfBird;
             }
 
-            // sets image of selected bird and stop all audio clips
             @Override
             public void handle(ActionEvent event) {
                 currentImage.setImage(images[indexOfBird]);
@@ -99,9 +90,11 @@ public class BirdSongPlayer extends Application {
             }
         }
 
-        // create radio buttons, add to VBox, toggle group, and register handler
+        // create radio buttons and register handlers
+        RadioButton[] radioButtons = new RadioButton[birdNames.length];
+        ToggleGroup toggleGroup = new ToggleGroup();
         for (int i = 0; i < birdNames.length; i++) {
-            radioButtons[i] = new RadioButton(capitalizeFirstLetter(birdNames[i]));
+            radioButtons[i] = new RadioButton(birdNames[i]);
             radioButtonVBox.getChildren().add(radioButtons[i]);
             radioButtons[i].setOnAction(new BirdSelectionHandler(i));
             toggleGroup.getToggles().add(radioButtons[i]);
@@ -124,16 +117,6 @@ public class BirdSongPlayer extends Application {
         stage.setTitle("Bird Song");
         stage.setScene(scene);
         stage.show();
-    }
-
-    /**
-     * Returns a given string with the first letter capitalized
-     */
-    private static String capitalizeFirstLetter(String str) {
-        if (str == null || str.isEmpty()) {
-            return str;
-        }
-        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
     }
 
     public static void main(String[] args) {
