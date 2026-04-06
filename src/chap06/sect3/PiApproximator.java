@@ -33,7 +33,7 @@ public class PiApproximator {
         // the last digit may be unreliable due to binary rounding, so 15 is specified.
         String label1 = "The value of π estimated by Monte Carlo simulation";
         String label2 = "Double-precision floating-point value nearest to π";
-        System.out.printf("%s: %.15f%n", label1, piApprox);
-        System.out.printf("%s: %.15f%n", label2, Math.PI);
+        System.out.printf("%s: %.15f %n", label1, piApprox);
+        System.out.printf("%s: %.15f %n", label2, Math.PI);
     }
 }

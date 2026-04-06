@@ -36,7 +36,7 @@ public class NumberServer extends Application {
       randomizeLabel();
 
       // style button and label.
-      String style = "-fx-font-size:24; -fx-font-weight: bold; -fx-text-fill: #1f2f4f;";
+      String style = "-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #1f2f4f";
       button.setStyle(style);
       label.setStyle(style);
 

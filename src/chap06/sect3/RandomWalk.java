@@ -25,7 +25,7 @@ public class RandomWalk {
       }
 
       double expectedSteps = (double) numSteps / numWalks;
-      System.out.printf("Expected length of random walk: %.2f steps.%n", expectedSteps);
+      System.out.printf("Expected length of random walk: %.2f steps. %n", expectedSteps);
    }
 
    /**

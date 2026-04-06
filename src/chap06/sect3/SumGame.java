@@ -16,13 +16,13 @@ public class SumGame {
 
       System.out.printf("Simulating %,d trials of the Sum Game... %n", numGames);
       for (int i = 0; i < numGames; i++) {
-         if (sumGame()) {
+         if (playerWins()) {
             wins++;
          }
       }
 
-      double probability = (double) wins / numGames;
-      System.out.printf("Estimated probability of winning: %.4f%% %n", probability);
+      double probability = (double) wins / numGames * 100;
+      System.out.printf("Estimated probability of winning: %.3f%% %n", probability);
    }
 
    /**
@@ -30,7 +30,7 @@ public class SumGame {
     *
     * @return true if the player wins and false otherwise
     */
-   private static boolean sumGame() {
+   private static boolean playerWins() {
       ThreadLocalRandom rand = ThreadLocalRandom.current();
       int a = rand.nextInt(1, 7);
       int b = rand.nextInt(1, 7);

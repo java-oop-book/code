@@ -20,8 +20,8 @@ public class CrapsProbabilityCalculator {
             }
         }
 
-        double probability = (double) wins / numGames;
-        System.out.printf("Estimated probability of winning: %.4f %n", probability);
+        double probability = (double) wins / numGames * 100;
+        System.out.printf("Estimated probability of winning: %.3f %n", probability);
     }
 
     /**

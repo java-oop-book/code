@@ -29,7 +29,7 @@ public class SimpleSolarSystem extends Application {
       Circle sun = new Circle(size / 6.0, Color.GOLD);
 
       // Create a circle representing the planet's orbital path. PathTransition requires the path
-      // node to have a fill or stroke. Using Color.TRANSPARENT hides the orbit path while keeping
+      // node to have a fill or stroke. Using Color.TRANSPARENT hides the orbital path while keeping
       // it a valid path for the transition.
       Circle orbit = new Circle(size / 2.0 - 30, Color.TRANSPARENT);
 
@@ -46,10 +46,6 @@ public class SimpleSolarSystem extends Application {
       pTrans.setCycleCount(Timeline.INDEFINITE);
       pTrans.setAutoReverse(false);
       pTrans.play();
-
-      // Implementation note: PathTransition expects a Path node. Using a Circle works, but it is
-      // interpreted as a path, which can introduce small distortions. For this reason, the planet
-      // may appear slightly elongated as it moves.
 
       // clicking the mouse changes direction of planet (by negating its rate)
       root.setOnMouseClicked(e -> pTrans.setRate(-pTrans.getRate()));

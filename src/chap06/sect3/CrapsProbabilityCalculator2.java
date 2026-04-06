@@ -27,9 +27,9 @@ public class CrapsProbabilityCalculator2 {
             maxNumRolls = Math.max(maxNumRolls, positiveResult);
         }
 
-        double probability = (double) wins / numGames;
+        double probability = (double) wins / numGames * 100;
         double expectedLength = (double) rolls / numGames;
-        System.out.printf("Estimated probability of winning: %.4f %n", probability);
+        System.out.printf("Estimated probability of winning: %.3f%% %n", probability);
         System.out.printf("Expected number of rolls per game: %.3f %n", expectedLength);
         System.out.printf("Greatest number of rolls: %d %n", maxNumRolls);
     }
