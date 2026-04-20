@@ -27,14 +27,6 @@ public class RegularPolygon extends Polygon {
         setCorners();
     }
 
-    public double getX() {
-        return x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
     /**
      * Calculates the corner points for this regular polygon.
      */

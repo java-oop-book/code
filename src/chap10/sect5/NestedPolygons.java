@@ -32,7 +32,7 @@ public class NestedPolygons extends Application {
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root);
 
-        // container with checkbox for dash/solid borders
+        // container with checkbox for dashed/solid borders
         Pane topPane = getPane();
         CheckBox checkBox = new CheckBox("Solid");
         checkBox.setSelected(true);
@@ -63,7 +63,7 @@ public class NestedPolygons extends Application {
             centerPane.getChildren().add(rp);
             rp.setStroke(randomColor());
             rp.setStrokeWidth(4);
-            rp.setFill(Color.TRANSPARENT);
+            rp.setFill(null);
         }
 
         // bottom pane with color picker and button

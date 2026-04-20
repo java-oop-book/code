@@ -19,7 +19,7 @@ public class SmootherDemo {
         System.out.print("Original data: ");
         for (int i = 0; i < data.length; i++) {
             data[i] = rand.nextDouble(10);
-            System.out.printf("%.3f ", data[i]);
+            System.out.printf("%.2f ", data[i]);
         }
         System.out.println();
 
@@ -48,12 +48,12 @@ public class SmootherDemo {
         // safe downcasting with instanceof
         if (smoother3 instanceof RangeSmoother) {
             RangeSmoother rangeSmoother = (RangeSmoother) smoother3;
-            System.out.printf("Range: %s%n", Arrays.toString(rangeSmoother.getRange()));
+            System.out.printf("Range: %s %n", Arrays.toString(rangeSmoother.getRange()));
         }
 
         // safe downcasting with pattern variable and instanceof
         if (smoother3 instanceof RangeSmoother rangeSmoother) {
-            System.out.printf("Range: %s%n", Arrays.toString(rangeSmoother.getRange()));
+            System.out.printf("Range: %s %n", Arrays.toString(rangeSmoother.getRange()));
         }
     }
 
@@ -62,7 +62,7 @@ public class SmootherDemo {
      */
     private static void printSmoothedData(DataSmoother smoother, double[] data) {
         for (double x : data) {
-            System.out.printf("%.3f ", smoother.addMeasurement(x)); // runtime polymorphism
+            System.out.printf("%.2f ", smoother.addMeasurement(x)); // runtime polymorphism
         }
         System.out.println();
     }
