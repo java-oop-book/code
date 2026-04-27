@@ -31,7 +31,7 @@ public class Hailstones {
       ArrayList<Integer> hailstones = getHailstones(initialTerm);
 
       int numTerms = hailstones.size();
-      int maxValue = Integer.MIN_VALUE;
+      int maxValue = 0;
       int records = 0;
 
       for (int n : hailstones) {
