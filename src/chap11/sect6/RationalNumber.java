@@ -1,4 +1,4 @@
-package chap10.sect2;
+package chap11.sect6;
 
 /**
  * An immutable rational number.
@@ -21,13 +21,16 @@ public class RationalNumber extends Number implements Comparable<RationalNumber>
     private final int denominator;
 
     /**
-     * Constructs a rational number with a specified numerator and denominator. Assumes that the
-     * denominator is non-zero; behavior is undefined if this precondition is violated.
+     * Constructs a rational number with a specified numerator and denominator.
      *
      * @param numerator   an arbitrary integer
      * @param denominator a non-zero integer
+     * @throws ArithmeticException if denominator is 0
      */
     public RationalNumber(int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("Denominator cannot be zero.");
+        }
 
         // The greatest common divisor of numerator and denominator will be factored out so that each
         // rational number has a unique representation.
@@ -36,12 +39,11 @@ public class RationalNumber extends Number implements Comparable<RationalNumber>
         // It is convenient to store the denominator as a positive integer, so if needed we can take
         // the additive inverse of both numerator and denominator.
         if (denominator < 0) {
-            this.numerator = -numerator / gcd;
-            this.denominator = -denominator / gcd;
-        } else {
-            this.numerator = numerator / gcd;
-            this.denominator = denominator / gcd;
+            numerator = -numerator;
+            denominator = -denominator;
         }
+        this.numerator = numerator / gcd;
+        this.denominator = denominator / gcd;
     }
 
     /**
@@ -105,8 +107,13 @@ public class RationalNumber extends Number implements Comparable<RationalNumber>
 
     /**
      * Returns the multiplicative inverse of this. Assumes this is non-zero.
+     *
+     * @throws ArithmeticException if denominator is zero
      */
     public RationalNumber inverse() {
+        if (numerator == 0) {
+            throw new ArithmeticException("Cannot take inverse of zero.");
+        }
         return new RationalNumber(denominator, numerator);
     }
 
