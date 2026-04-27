@@ -1,4 +1,4 @@
-package chap11.sect6;
+package chap11.sect4;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

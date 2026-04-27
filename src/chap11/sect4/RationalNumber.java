@@ -1,4 +1,4 @@
-package chap11.sect6;
+package chap11.sect4;
 
 /**
  * An immutable rational number.
