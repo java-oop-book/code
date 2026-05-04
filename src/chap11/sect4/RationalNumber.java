@@ -108,7 +108,7 @@ public class RationalNumber extends Number implements Comparable<RationalNumber>
     /**
      * Returns the multiplicative inverse of this. Assumes this is non-zero.
      *
-     * @throws ArithmeticException if denominator is zero
+     * @throws ArithmeticException if numerator is zero
      */
     public RationalNumber inverse() {
         if (numerator == 0) {
